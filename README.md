@@ -1,18 +1,33 @@
-# AI-baserad Videostabilisering
+# AI-baserad Videostabilisering – Streamlit App för Render
 
-Detta är en beta-version av en Streamlit-app som automatiskt stabiliserar skakiga videor (.mp4 eller .mov) med hjälp av AI och OpenCV.
+Detta är en webbaserad app för att stabilisera skakigt videomaterial (.mp4 och .mov) med hjälp av AI (VidStab + OpenCV).
 
-## Kom igång lokalt
+## 🚀 Så här kör du appen på [Render.com](https://render.com)
 
-1. Klona repot eller ladda ner ZIP-filen.
-2. Installera beroenden:
+### 1. Skapa ett nytt GitHub-repo
+Ladda upp hela innehållet från denna ZIP till ett nytt repo.
 
-```
-pip install -r requirements.txt
-```
+### 2. Skapa en Web Service i Render
+1. Gå till dashboard.render.com
+2. Klicka på **"New +" → "Web Service"**
+3. Välj ditt repo
+4. Render läser automatiskt `render.yaml`
 
-3. Kör appen:
+### 3. Ändra "Start Command"
+Render försöker använda `gunicorn`. Ändra till:
 
-```
+```bash
 streamlit run app.py
 ```
+
+### 4. Klart! 🎉
+Appen startar automatiskt. Du kan ladda upp videofiler upp till **500 MB**.
+
+---
+
+## 📁 Viktiga filer
+
+- `render.yaml` – konfigurerar Render
+- `.streamlit/config.toml` – sätter maxUploadSize och port
+- `requirements.txt` – installerar alla beroenden
+- `app.py` – själva Streamlit-appen
